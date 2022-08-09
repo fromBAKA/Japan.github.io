@@ -1,0 +1,1741 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f1f1;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    background: #dddddd;
+}
+::-webkit-scrollbar-thumb {
+    background: #db1d5c;
+    border-radius: 9999px;
+}
+nav {
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    background: #333;
+    border-bottom: 1px dotted #f1f1f1;
+    background: linear-gradient(to bottom, #333, #626262);
+    z-index: 100;
+}
+.logo-menu {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    width: 50px;
+    z-index: 250;
+    display: none;
+}
+.liste-nav {
+    background: #333;
+    background: linear-gradient(to bottom, #333, #626262);
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    position: fixed;
+    z-index: 200;
+}
+.item-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.item-nav a {
+    font-size: 25px;
+    color: #f1f1f1;
+    text-decoration: none;
+    margin: 0 20px;
+}
+.item-nav a::after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 0%;
+    height: 2px;
+    background: #f1f1f1;
+    transition: all 0.2s ease-in-out;
+}
+.item-nav a:hover::after {
+    width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+
+    .logo-menu {
+        display: block;
+    }
+    .liste-nav {
+        display: none;
+        flex-direction: column;
+        height: auto;
+    }
+    .liste-nav.active {
+        display: block;
+    }
+    .item-nav {
+        height: 70px;
+    }
+    .item-nav:nth-child(1) {
+        margin-top: 70px;
+    }
+}
+
+/* --------- accueil ---------- */
+
+.img-accueil {
+    width: 100%;
+    height: 721px;
+    background-image: url(images/accueil-japan\ .jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    padding-top: 1%;
+}
+
+.titre-accueil {
+    font-size: 100px;
+    text-align: center;
+    color: #f1f1f1;
+    margin-top: 200px;
+    text-shadow: 0 0 10px #000;
+    font-family: Merienda one,sans-serif;
+}
+
+.sous-titre-accueil {
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 0 0 10px #000;
+    color: #f1f1f1;
+    font-family: Merienda one,sans-serif;
+    margin-top: 20px;
+}
+
+.btn-accueil {
+    border-radius: 9999px;
+    border: 1ps solid #000;
+    color: #f1f1f1;
+    background: crimson;
+    width: 200px;
+    height: 70px;
+    text-align: center;
+    font-size: 22px;
+    display: block;
+    line-height: 70px;
+    text-decoration: none;
+    margin: 70px auto 0;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-family: Merienda one,sans-serif;
+}
+
+.btn-accueil:hover {
+    background: rgb(177,0,36);
+    color: #fff;
+}
+
+@media screen and (max-width: 960px) {
+    .accueil {
+        height: 650px;
+    }
+    .titre-accueil {
+        font-size: 60px;
+    }
+    .sous-titre-accueil {
+        font-size: 20px;
+        margin-top: 40px;
+    }
+    .btn-accueil {
+        width: 130px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 16px;
+        margin: 100px auto;
+    }
+    .logo-menu {
+        top: 15px;
+        width: 40px;
+    }
+}
+
+/* ------ Villes -------- */
+
+.section-villes {
+    display: grid;
+    grid-template: repeat(9, 70px) / repeat(8,1fr);
+    background: #f1f1f1;
+}
+.titre-villes {
+    grid-area: 1/1/2/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    padding-top: 50px;
+    font-family: Merienda one,sans-serif;
+}
+
+.lien-tokyo {
+    grid-area: 4/2/4/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background: crimson;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px #000;
+    text-shadow: 0 0 10px #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all O,2s ease-in-out;
+}
+.lien-tokyo:hover {
+    background: #333;
+    color: #f1f1f1;
+    box-shadow: 0 0 20px crimson;
+}
+
+.lien-kyoto {
+    grid-area: 6/2/6/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background: crimson;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px #000;
+    text-shadow: 0 0 10px #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all O,2s ease-in-out;
+}
+.lien-kyoto:hover {
+    background: #333;
+    color: #f1f1f1;
+    box-shadow: 0 0 20px crimson;
+}
+
+.lien-osaka {
+    grid-area: 8/2/8/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background: crimson;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px #000;
+    text-shadow: 0 0 10px #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all O,2s ease-in-out;
+}
+.lien-osaka:hover {
+    background: #333;
+    color: #f1f1f1;
+    box-shadow: 0 0 20px crimson;
+}
+
+.lien-nagoya {
+    grid-area: 4/6/4/8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background: crimson;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px #000;
+    text-shadow: 0 0 10px #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all O,2s ease-in-out;
+}
+.lien-nagoya:hover {
+    background: #333;
+    color: #f1f1f1;
+    box-shadow: 0 0 20px crimson;
+}
+
+.lien-hiroshima {
+    grid-area: 6/6/6/8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background: crimson;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px #000;
+    text-shadow: 0 0 10px #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all O,2s ease-in-out;
+}
+.lien-hiroshima:hover {
+    background: #333;
+    color: #f1f1f1;
+    box-shadow: 0 0 20px crimson;
+}
+
+.lien-kobe {
+    grid-area: 8/6/8/8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background: crimson;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px #000;
+    text-shadow: 0 0 10px #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all O,2s ease-in-out;
+}
+.lien-kobe:hover {
+    background: #333;
+    color: #f1f1f1;
+    box-shadow: 0 0 20px crimson;
+}
+.logo-japon {
+    display: block;
+    grid-area: 5/4/5/4;
+    padding-left: 200px;
+}
+
+@media screen and (max-width: 1024px) {
+    .logo-japon {
+        padding-left: 130px;
+    }
+}
+
+@media screen and (max-width: 697px) {
+    .titre-villes {
+        font-size: 30px;
+        grid-area: 2/2/2/8;
+        text-align: center;
+    }
+    .lien-ville {
+        grid-area: 4/2/4/8;
+    }
+    .lien-tokyo {
+        grid-area: 4/2/4/8;
+        position: relative;
+    }
+    .lien-kyoto {
+        grid-area: 5/2/5/8;
+        position: relative;
+        top: 20px;
+    }
+    .lien-osaka {
+        grid-area: 6/2/6/8;
+        position: relative;
+        top: 40px;
+    }
+    .lien-nagoya {
+        grid-area: 7/2/7/8;
+        position: relative;
+        top: 60px;
+    }
+    .lien-hiroshima {
+        grid-area: 8/2/8/8;
+        position: relative;
+        top: 80px;
+    }
+    .lien-kobe {
+        grid-area: 9/2/9/8;
+        position: relative;
+        top: 100px;
+    }
+.logo-japon {
+    display: none;
+}
+}
+
+
+/* --------- Parallax 1 ----------- */
+
+.parallax1 {
+    width: 100%;
+    height: 300px;
+    background: url(images/parallax1.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+.japonais1 {
+    font-size: 65px;
+    color: #f1f1f1;
+}
+
+.text1 {
+    display: block;
+    font-size: 25px;
+    color: #f1f1f1;
+}
+
+@media screen and (max-width: 739px) {
+    .japonais1 {
+        font-size: 55px;
+    }
+}
+
+@media screen and (max-width: 605px) {
+    .japonais1 {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 389px) {
+    .japonais1 {
+        font-size: 25px;
+    }
+    .text1 {
+        font-size: 20px;
+    }
+}
+
+
+/* ---------- Les lieux touristiques ----------- */
+
+.section-lieux {
+    display: grid;
+    grid-template: repeat(9, 70px) / repeat(8,1fr);
+    background: #f1f1f1;
+}
+.titre-lieux {
+    grid-area: 1/1/2/-1;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    padding-top: 50px;
+    font-family: Merienda one,sans-serif;
+}
+
+.chateau-himeji {
+    grid-area: 4/2/4/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background: crimson;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px #000;
+    text-shadow: 0 0 10px #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all O,2s ease-in-out;
+}
+.chateau-himeji:hover {
+    background: #333;
+    color: #f1f1f1;
+    box-shadow: 0 0 20px crimson;
+}
+
+.senso-ji {
+    grid-area: 6/2/6/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background: crimson;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px #000;
+    text-shadow: 0 0 10px #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all O,2s ease-in-out;
+}
+.senso-ji:hover {
+    background: #333;
+    color: #f1f1f1;
+    box-shadow: 0 0 20px crimson;
+}
+
+.fuji {
+    grid-area: 8/2/8/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background: crimson;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px #000;
+    text-shadow: 0 0 10px #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all O,2s ease-in-out;
+}
+.fuji:hover {
+    background: #333;
+    color: #f1f1f1;
+    box-shadow: 0 0 20px crimson;
+}
+
+.lac-ashi {
+    grid-area: 4/6/4/8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background: crimson;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px #000;
+    text-shadow: 0 0 10px #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all O,2s ease-in-out;
+}
+.lac-ashi:hover {
+    background: #333;
+    color: #f1f1f1;
+    box-shadow: 0 0 20px crimson;
+}
+
+.bambou {
+    grid-area: 6/6/6/8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background: crimson;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px #000;
+    text-shadow: 0 0 10px #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all O,2s ease-in-out;
+}
+.bambou:hover {
+    background: #333;
+    color: #f1f1f1;
+    box-shadow: 0 0 20px crimson;
+}
+
+.manga {
+    grid-area: 8/6/8/8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background: crimson;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 0 20px #000;
+    text-shadow: 0 0 10px #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all O,2s ease-in-out;
+}
+.manga:hover {
+    background: #333;
+    color: #f1f1f1;
+    box-shadow: 0 0 20px crimson;
+}
+
+#scrollUp
+{
+position: fixed;
+bottom : 10px;
+right: -100px;
+opacity: 0.5;
+}
+
+@media screen and (max-width: 1039px) {
+    .titre-lieux {
+        font-size: 55px;
+    }
+    .chateau-himeji {
+        grid-area: 4/2/4/4;
+    }
+    .senso-ji {
+        grid-area: 6/2/6/4;
+    }
+    .fuji {
+        grid-area: 8/2/8/4;
+    }
+    .lac-ashi {
+        grid-area: 4/6/4/8;
+    }
+    .bambou {
+        grid-area: 6/6/6/8;
+    }
+    .manga {
+        grid-area: 8/6/8/8;
+    }
+}
+
+@media screen and (max-width: 816px) {
+    .titre-lieux {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 688px) {
+    .titre-lieux {
+        font-size: 35px;
+    }
+    .chateau-himeji {
+        grid-area: 4/2/4/8;
+    }
+    .senso-ji {
+        grid-area: 5/2/5/8;
+        position: relative;
+        top: 20px;
+    }
+    .fuji {
+        grid-area: 6/2/6/8;
+        position: relative;
+        top: 40px;
+    }
+    .lac-ashi {
+        grid-area: 7/2/7/8;
+        position: relative;
+        top: 60px;
+    }
+    .bambou {
+        grid-area: 8/2/8/8;
+        position: relative;
+        top: 80px;
+    }
+    .manga {
+        grid-area: 9/2/9/8;
+        position: relative;
+        top: 100px;
+    }
+}
+
+@media screen and (max-width: 522px) {
+    .titre-lieux {
+        font-size: 25px;
+    }
+}
+
+/* -------- Parallax 2 --------------- */
+
+.parallax2 {
+    width: 100%;
+    height: 300px;
+    background: url(images/parallax2.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
+}
+.japonais2 {
+    font-size: 65px;
+    color: #f1f1f1;
+}
+.text2 {
+    display: block;
+    font-size: 25px;
+    color: #f1f1f1;
+}
+
+@media screen and (max-width: 739px) {
+    .japonais2 {
+        font-size: 55px;
+    }
+}
+
+@media screen and (max-width: 605px) {
+    .japonais2 {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 389px) {
+    .japonais2 {
+        font-size: 25px;
+    }
+    .text2 {
+        font-size: 20px;
+    }
+}
+
+/* ------------- Tarif --------------- */
+
+.section-tarif {
+    padding-bottom: 150px;
+    border-bottom: 1px dashed #333;
+}
+.titre-tarif {
+    text-align: center;
+    font-size: 45px;
+    margin: 120px 0 20px;
+    padding: 0 30px;
+    font-family: Merienda one,sans-serif;
+}
+.section-tarif hr {
+    width: 200px;
+    margin: 20px auto 100px;
+}
+.container-tarif {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.carte-tarif {
+    width: 350px;
+    height: auto;
+    border-radius: 5px;
+    margin: 15px 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+.carte-tarif:hover {
+    transform: translateY(-5px);
+}
+.carte-tarif h4 {
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 35px;
+    clip-path: polygon(0 0, 100% 0,100% 80%, 0 100%);
+    background: #ffafb1;
+}
+.carte-tarif span {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.carte-tarif:nth-child(2) h4 {
+    background: #ff5073;
+}
+.carte-tarif:nth-child(3) h4 {
+    background: #ff0033;
+}
+.carte-tarif p {
+    font-size: 18px;
+    padding: 20px 10px;
+    border-top: 1px solid rgb(194, 197, 194);
+}
+.carte-tarif p:last-of-type {
+    border-bottom: 1px solid rgb(194, 197, 194);
+}
+.carte-tarif p:nth-child(odd) {
+    background: rgba(195,195,195,0.219);
+}
+.carte-tarif a {
+    display: block;
+    text-decoration: none;
+    border: 1px solid #333;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    border-radius: 9999px;
+    color: #333;
+    font-size: 18px;
+    line-height: 50px;
+    margin: 20px auto;
+    transform: all 0.2s ease-in-out;
+}
+.carte-tarif a:hover {
+    background: #333;
+    color: #f1f1f1;
+}
+
+@media screen and (max-width: 900px) {
+
+    .section-tarif h3 {
+        font-size: 35px;
+        margin: 80px 0 80px;
+    }
+}
+@media screen and (max-width: 425px) {
+
+    .section-tarif h3 {
+        font-size: 30px;
+        padding: 0 10px;
+        margin: 50px 0;
+    }
+    .section-tarif hr {
+        width: 200px;
+        margin: 20px auto 20px;
+    }
+}
+
+/* --------------- Contact ------------------ */
+
+.section-contact {
+    padding-bottom: 90px;
+}
+.section-contact h2 {
+    text-align: center;
+    color: #333;
+    font-size: 48px;
+    font-weight: 400px;
+    margin-bottom: 50px;
+    padding-bottom: 70px 0 0;
+    padding-top: 40px;
+    font-family: Merienda one,sans-serif;
+    border-top: 1px dashed rgba(0, 0, 0, 0.5);
+}
+.container-form {
+    margin: 0 auto;
+    width: 70%;
+}
+.form-groupe {
+    position: relative;
+    margin-bottom: 45px;
+}
+.form-groupe label {
+    color: #aaa;
+    font-size: 20px;
+}
+.form-groupe input {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 3px solid #aaa;
+    color: #666;
+    font-size: 20px;
+}
+textarea {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border: 3px solid #aaa;
+    border-radius: 3px;
+    padding: 5px;
+    resize: none;
+    outline: none;
+    font-size: 20px;
+    background: #f1f1f1;
+}
+.form-groupe:nth-child(4) {
+    margin-bottom: 25px;
+}
+.form-groupe .button-sub {
+    display: block;
+    width: auto;
+    padding: 15px 60px;
+    border: 3px solid rgb(144, 144, 144);
+    border-radius: 9999px;
+    background-image: linear-gradient(to right, transparent 50%, rgb(65,65,65) 50%, rgb(134,134,134));
+    background-size: 200%;
+    color: #333;
+    font-size: 24px;
+    font-weight: 500px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+.form-groupe .button-sub:hover {
+    color: #fff;
+    background-position: 100%;
+    border: 3px solid #fff;
+}
+@media screen and (max-width: 1300px) {
+    .section-contact h2 {
+        padding: 70px 0 0 0;
+    }
+    .container-form {
+        padding-left: 0;
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #333;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #f1f1f1;
+    margin-top: 70px;
+}
+
+/* ------------- Page Tokyo --------------- */
+
+.section-asymetrique {
+    background: #f1f1f1;
+}
+
+.titre-page-ville {
+    text-align: center;
+    font-size: 45px;
+    padding: 100px 30px;
+    font-family: Merienda one,sans-serif;
+}
+.hr-page-ville {
+    width: 200px;
+    margin: -70px auto 100px;
+}
+.section-page-ville {
+    background: #f1f1f1;
+}
+.img-accueil-ville {
+   display: block;
+   width: 80%;
+   height: auto;
+   margin: auto;
+}
+@media screen and (max-width: 782px) {
+    .img-accueil-ville {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 459px) {
+    .titre-page-ville {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .titre-page-ville {
+        font-size: 25px;
+    }
+}
+
+/* -------------- Sommaire (tokyo) ------------------ */
+
+.sommaire {
+    width: 75%;
+    margin: 100px auto;
+    line-height: 40px;
+    padding: 10px;
+    
+}
+.titre-som {
+    font-size: 30px;
+    font-family: Merienda one,sans-serif;
+}
+.liste-som {
+    list-style-type: none;
+    padding: 20px 20px;
+}
+.item-som a {
+    font-size: 25px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: all 0.6s ease-in-out;
+}
+.item-som a:hover {
+    padding: 5px 50px;
+    background: rgb(0, 157, 178);
+    color: #f1f1f1;
+}
+.titre-sous-som {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    padding-top: 80px;
+    margin: auto;
+    width: 60%;
+}
+.p-sous-som {
+    width: 60%;
+    font-size: 20px;
+    margin: auto;
+    padding: 40px;
+}
+.p-sous-som2 {
+    width: 60%;
+    font-size: 20px;
+    margin: auto;
+    padding: 40px;
+    /* background: rgba(0, 157, 178,0.1); */
+}
+
+@media screen and (max-width: 758px) {
+    .item-som a {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .p-sous-som {
+        width: 100%;
+    }
+    .p-sous-som2 {
+        width: 100%;
+    }
+}
+
+/* -------------- bloc 1 (tokyo) ------------------ */
+.bloc-ville-cont{
+    margin-top: 100px;
+}
+.bloc-titre-ville {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-family: Merienda one,sans-serif;
+}
+.bloc-img-ville {
+    display: block;
+    padding-top: 40px;
+    width: 60%;
+    height: auto;
+    margin: auto;
+}
+.bloc-p-ville {
+    display: block;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-top: 70px;
+    padding-bottom: 60px;
+    line-height: 20px;
+    font-size: 20px;
+}
+@media screen and (max-width: 782px) {
+    .bloc-img-ville {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 459px) {
+    .bloc-titre-ville {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .bloc-titre-ville {
+        font-size: 25px;
+    }
+}
+
+/* -------------- flèche haut ------------------ */
+
+.bloc-fleche-haut {
+    position: relative;
+     top: 600px;
+}
+ .fleche-haut {
+    display: block;
+    width: 50px;
+    height: 50px;
+     margin: auto;
+    margin-right: 100px; 
+     position: fixed; 
+     right: -105px;
+     top: 50%; 
+      margin-top: 260px; 
+}
+
+
+/* -------------- Kyoto ------------------ */
+
+.visiter-kyoto {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 30px;
+    font-family: Merienda one,sans-serif;
+}
+.p-visiter-kyoto {
+    display: block;
+    width: 80%;
+    text-align: center;
+    margin: 40px auto;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 782px) {
+    .img-accueil-ville {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 459px) {
+    .visiter-kyoto {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .visiter-kyoto {
+        font-size: 20px;
+    }
+    .p-visiter-kyoto {
+        font-size: 15px;
+    }
+}
+
+.lien-temple-kyoto {
+    text-decoration: underline;
+    color: #333;
+    padding: 10px;
+    width: 12%;
+    display: flex;
+    justify-content: start;
+    color: rgb(0, 157, 178);
+    transition: all 0.4s ease-in-out;
+}
+.lien-temple-kyoto:hover {
+    background: rgb(0, 157, 178);
+    color: #f1f1f1;
+}
+.lien-sanctuaire-kyoto {
+    text-decoration: underline;
+    color: #333;
+    padding: 10px;
+    width: 23%;
+    display: flex;
+    justify-content: start;
+    color: rgb(0, 157, 178);
+    transition: all 0.4s ease-in-out;
+}
+.lien-sanctuaire-kyoto:hover {
+    background: rgb(0, 157, 178);
+    color: #f1f1f1;
+}
+.bloc-p-kyoto {
+    display: block;
+    
+    width: 70%;
+    margin: auto;
+    padding-top: 70px;
+    line-height: 20px;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 783px) {
+    .lien-sanctuaire-kyoto {
+        width: 100%;
+    }
+    .lien-temple-kyoto {
+        width: 100%;
+    }
+}
+
+
+/* -------------- Page le chateau de Himeji ------------------ */
+
+.gros-titre-touristique {
+    text-align: center;
+    font-size: 45px;
+    padding: 100px 30px;
+    font-family: Merienda one,sans-serif;
+}
+.s-titre {
+    color: #ff0033;
+    text-shadow:5px 5px 5px #000;
+}
+.hr-page-touristique {
+    width: 200px;
+    margin: -70px auto 100px;
+}
+.img-accueil-himeji {
+    display: block;
+   width: 80%;
+   height: auto;
+   margin: auto;
+}
+.titre-himeji {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 80px;
+    margin: auto;
+    width: 80%;
+}
+.p-himeji {
+    font-size: 20px;
+    padding-top: 80px;
+    margin: auto;
+    width: 80%;
+}
+
+#slider {
+    position: relative;
+    width: 600px;
+    margin: auto;
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+}
+#slider img {
+    width: 600px;
+}
+
+#precedent,
+#suivant {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    position: absolute;
+    font-size: 100px;
+    color: rgba(220, 220, 220, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+
+#precedent {
+    left: 0;
+}
+
+#suivant {
+    right: 0;
+}
+
+#slider:hover #precedent,
+#slider:hover #suivant {
+    opacity: 1;
+}
+
+.img-int-himeji {
+    display: block;
+   width: 40%;
+   height: 500px;
+   margin: 50px auto;
+}
+
+.img-carte-japon {
+    display: block;
+   width: 30%;
+   height: 500px;
+   margin: 50px auto;
+}
+
+.map-himeji {
+    display: block;
+    width: 80%;
+    height: 600px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+
+
+/* -------------- Page le chateau de Himeji  media queries ------------------ */
+@media screen and (max-width: 770px) {
+    .img-int-himeji {
+        width: 50%;
+    }
+    .img-carte-japon {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 684px){
+    .gros-titre-touristique {
+        font-size: 35px;
+    }
+    .img-accueil-himeji {
+        width: 100%;
+    }
+    .img-int-himeji {
+        width: 100%;
+    }
+    .img-carte-japon {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 610px){
+    #slider {
+        width: 400px;
+    }
+    #slider img {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #slider {
+        width: 300px;
+    }
+    #slider img {
+        width: 300px;
+    }
+}
+
+
+
+/* -------------- Page du temple de Senso-ji ------------------ */
+
+.img-senso-accueil {
+    display: block;
+   width: 80%;
+   height: auto;
+   margin: auto;
+}
+
+.titre-senso {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 80px;
+    margin: auto;
+    width: 80%;
+}
+.p-senso {
+    font-size: 20px;
+    padding-top: 80px;
+    margin: auto;
+    width: 80%;
+}
+
+
+#sliderSenso {
+    display: block;
+    position: relative;
+    width: 600px;
+    margin: auto;
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+}
+#sliderSenso img {
+    width: 600px;
+}
+#precedentSenso,
+#suivantSenso {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    position: absolute;
+    font-size: 100px;
+    color: rgba(220, 220, 220, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+#precedentSenso {
+    left: 0;
+}
+
+#suivantSenso {
+    right: 0;
+}
+
+#sliderSenso:hover #precedentSenso,
+#sliderSenso:hover #suivantSenso {
+    opacity: 1;
+}
+
+.img-senso-end {
+    display: block;
+   width: 80%;
+   height: auto;
+   margin: auto;
+   height: 900px;
+   padding-top: 50px;
+}
+.map-senso {
+    display: block;
+    width: 80%;
+    height: 600px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* -------------- Page du temple de Senso-ji  media queries ------------------ */
+
+@media screen and (max-width: 770px) {
+    .img-carte-japon {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 684px){
+    .gros-titre-touristique {
+        font-size: 35px;
+    }
+}
+@media screen and (max-width: 684px){
+    .img-senso-accueil {
+        width: 100%;
+    }
+    .img-senso-end {
+        width: 100%;
+        height: 400px;
+    }
+}
+@media screen and (max-width: 610px){
+    #sliderSenso {
+        width: 400px;
+    }
+    #sliderSenso img {
+        width: 400px;
+    }
+}
+@media screen and (max-width: 400px) {
+    #sliderSenso {
+        width: 300px;
+    }
+    #sliderSenso img {
+        width: 300px;
+    }
+}
+
+/* -------------- Page le mont Fuji ------------------ */
+
+.img-fuji-accueil {
+    display: block;
+   width: 80%;
+   height: auto;
+   margin: auto;
+}
+.p-fuji {
+    font-size: 20px;
+    padding-top: 80px;
+    margin: auto;
+    width: 80%;
+}
+.img-fuji {
+    display: block;
+   width: 80%;
+   height: auto;
+   margin: auto;
+   padding-top: 50px;
+}
+.titre-fuji {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 80px;
+    margin: auto;
+    width: 80%;
+}
+.map-fuji {
+    display: block;
+    width: 80%;
+    height: 600px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* -------------- Page le mont fuji  media queries ------------------ */
+
+@media screen and (max-width: 684px) {
+    .img-fuji-accueil {
+        width: 100%;
+    }
+    .img-fuji {
+        width: 100%;
+    }
+    .gros-titre-touristique {
+        font-size: 35px;
+}
+}
+@media screen and (max-width: 360px) {
+    .gros-titre-touristique {
+        font-size: 30px;
+    }
+}
+
+
+/* -------------- Page du lac Ashi ------------------ */
+
+#sliderAshi {
+    position: relative;
+    width: 600px;
+    margin: auto;
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+}
+#sliderAshi img {
+    width: 600px;
+}
+
+#precedentAshi,
+#suivantAshi {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    position: absolute;
+    font-size: 100px;
+    color: rgba(220, 220, 220, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+
+#precedentAshi {
+    left: 0;
+}
+
+#suivantAshi {
+    right: 0;
+}
+
+#sliderAshi:hover #precedentAshi,
+#sliderAshi:hover #suivantAshi {
+    opacity: 1;
+}
+.titre-ashi {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 80px;
+    margin: auto;
+    width: 80%;
+}
+.p-ashi {
+    font-size: 20px;
+    padding-top: 80px;
+    margin: auto;
+    width: 80%;
+}
+.img-ashi {
+    display: block;
+   width: 80%;
+   height: auto;
+   margin: auto;
+   padding-top: 50px;
+}
+.img-ashi-p {
+    display: block;
+   width: 60%;
+   height: auto;
+   margin: auto;
+   padding-top: 100px;
+}
+.p-ashi-sous-img {
+    font-size: 15px;
+    padding-top: 10px;
+    margin: auto;
+    width: 60%;
+    opacity: 0.8;
+}
+
+.map-ashi {
+    display: block;
+    width: 80%;
+    height: 600px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* -------------- Page le mont fuji  media queries ------------------ */
+
+@media screen and (max-width: 684px) {
+    .img-ashi {
+        width: 100%;
+    }
+    .img-ashi-p {
+        width: 100%;
+    }
+    .p-ashi-sous-img {
+        width: 100%;
+    }
+    .gros-titre-touristique {
+        font-size: 35px;
+}
+}
+@media screen and (max-width: 610px){
+    #sliderAshi {
+        width: 400px;
+    }
+    #sliderAshi img {
+        width: 400px;
+    }
+}
+@media screen and (max-width: 400px) {
+    #sliderAshi {
+        width: 300px;
+    }
+    #sliderAshi img {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 360px) {
+    .gros-titre-touristique {
+        font-size: 30px;
+    }
+}
+
+/* -------------- Page de la forêt de bambou de Sagano ------------------ */
+
+.img-accueil-bambou {
+    display: block;
+   width: 80%;
+   height: auto;
+   margin: auto;
+}
+.titre-bambou {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 80px;
+    margin: auto;
+    width: 80%;
+}
+.p-bambou {
+    font-size: 20px;
+    padding-top: 80px;
+    margin: auto;
+    width: 80%;
+}
+.img-bambou {
+    display: block;
+   width: 80%;
+   height: 700px;
+   margin: auto;
+   padding-top: 50px;
+}
+.map-bambou {
+    display: block;
+    width: 80%;
+    height: 600px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* -------------- Page de la foret de Sagano  media queries ------------------ */
+
+@media screen and (max-width: 684px) {
+    .img-bambou {
+        width: 100%;
+        height: 400px;
+    }
+    .img-accueil-bambou {
+        width: 100%;
+    }
+    .gros-titre-touristique {
+        font-size: 35px;
+}
+}
+@media screen and (max-width: 360px) {
+    .gros-titre-touristique {
+        font-size: 30px;
+    }
+}
+
+/* -------------- Page des parcs mangas ------------------ */
+
+.p-manga {
+    font-size: 20px;
+    padding-top: 80px;
+    margin: auto;
+    width: 80%;
+}
+.img-manga {
+    display: block;
+   width: 80%;
+   height: 700px;
+   margin: auto;
+   padding-top: 50px;
+}
+.titre-manga {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 80px;
+    margin: auto;
+    width: 80%;
+}
+#sliderManga {
+    position: relative;
+    width: 600px;
+    margin: auto;
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+}
+#sliderManga img {
+    width: 600px;
+}
+
+#precedentManga,
+#suivantManga {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    position: absolute;
+    font-size: 100px;
+    color: rgba(220, 220, 220, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+
+#precedentManga {
+    left: 0;
+}
+
+#suivantManga {
+    right: 0;
+}
+
+#sliderManga:hover #precedentManga,
+#sliderManga:hover #suivantManga {
+    opacity: 1;
+}
+.map-ghibli, .map-naruto, .map-one, .map-conan, .map-pokemon {
+    display: block;
+    width: 80%;
+    height: 600px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* -------------- Page des parcs mangas  media queries ------------------ */
+
+@media screen and (max-width: 684px) {
+    .img-manga {
+        width: 100%;
+        height: 400px;
+    }
+    .gros-titre-touristique {
+        font-size: 35px;
+}
+}
+@media screen and (max-width: 610px){
+    #sliderManga {
+        width: 400px;
+    }
+    #sliderManga img {
+        width: 400px;
+    }
+}
+@media screen and (max-width: 400px) {
+    #sliderManga {
+        width: 300px;
+    }
+    #sliderManga img {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 360px) {
+    .gros-titre-touristique {
+        font-size: 30px;
+    }
+}
+
